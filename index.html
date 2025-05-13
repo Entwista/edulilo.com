@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edulilo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #ebf8ff, #ffffff);
+      color: #2d3748;
+    }
+    header {
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #1a365d;
+      margin-bottom: 1rem;
+    }
+    header p {
+      font-size: 1.25rem;
+      color: #2c5282;
+    }
+    section {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+    @media (min-width: 768px) {
+      section {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .mission {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .mission h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .mission p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .button {
+      background-color: #3182ce;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .card {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+    }
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #2b6cb0;
+    }
+    .card ul {
+      list-style: disc inside;
+      color: #4a5568;
+    }
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      padding: 2rem 1rem;
+      color: #718096;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Edulilo</h1>
+    <p>Computing with no excuses</p>
+  </header>
+
+  <section>
+    <div class="mission">
+      <h2>Our Mission</h2>
+      <p>
+        Edulilo allows your team to embrace cloud computing through practical education and managed services.
+      </br></br>
+        We are dedicated to helping your team continuously ship faster, and with higher quality, all while simplifying and reducing the cost of your infrastructure.
+      </p>
+      <!-- <a href="#" class="button">Learn More</a> -->
+    </div>
+
+    <div class="card">
+      <h3>AWS/Azure Services</h3>
+      <ul>
+        <li>Hands-on cloud management</li>
+        <li>Cost Reduction</li>
+        <li>CI speed improvements</li>
+        <li>CI reliability improvements</li>
+        <li>Customised training and workshops</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Edulilo. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
