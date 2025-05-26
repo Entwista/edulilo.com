@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Edulilo</title>
+  <title>Edulilo - AWS Consulting</title>
   <script>
     (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
         w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
@@ -16,115 +16,153 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #ebf8ff, #ffffff);
+      background: #f7fafc;
       color: #2d3748;
+      line-height: 1.6;
     }
+
     header {
       text-align: center;
-      padding: 5rem 1rem;
+      padding: 4rem 1rem 2rem;
+      background: linear-gradient(to right, #ebf8ff, #ffffff);
     }
+
     header h1 {
       font-size: 3rem;
+      margin: 0;
       color: #1a365d;
-      margin-bottom: 1rem;
     }
+
     header p {
       font-size: 1.25rem;
       color: #2c5282;
+      margin-top: 0.5rem;
     }
-    section {
-      max-width: 1000px;
+
+    .section {
+      max-width: 900px;
       margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: #2b6cb0;
+      margin-bottom: 1rem;
+    }
+
+    .services-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2rem;
-      padding: 2rem 1rem;
+      gap: 1rem;
     }
-    @media (min-width: 768px) {
-      section {
-        grid-template-columns: 1fr 1fr;
+
+    @media (min-width: 600px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
-    .mission {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+
+    .service-box {
+      background: #ffffff;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
     }
-    .mission h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+
+    .service-box h3 {
+      margin: 0.5rem 0;
+      color: #2c5282;
     }
-    .mission p {
-      font-size: 1.1rem;
+
+    .narrative p {
       margin-bottom: 1.5rem;
     }
-    .button {
-      background-color: #3182ce;
+
+    .cta {
+      background: #2b6cb0;
       color: white;
-      border: none;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .cta h2 {
+      color: white;
+    }
+
+    .cta a {
+      background: white;
+      color: #2b6cb0;
+      text-decoration: none;
       padding: 0.75rem 1.5rem;
       border-radius: 0.375rem;
-      cursor: pointer;
-      text-decoration: none;
-      font-size: 1rem;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 1rem;
     }
-    .card {
-      background: white;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 2rem;
-    }
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: #2b6cb0;
-    }
-    .card ul {
-      list-style: disc inside;
-      color: #4a5568;
-    }
+
     footer {
       text-align: center;
-      margin-top: 4rem;
       padding: 2rem 1rem;
+      font-size: 0.9rem;
       color: #718096;
-      font-size: 0.875rem;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Edulilo</h1>
     <p>Computing with no excuses</p>
   </header>
 
-  <section>
-    <div class="mission">
-      <h2>Offer</h2>
-      <p>
-        Are you a software engineering leader who wants to lower your cloud costs, minimize security expisure, and ship faster?
-	</br></br>
-      Edulilo is an AWS consultancy specialzing in analyzing your existing workloads in order to dramatically simplify them.
-      </br></br>
-      While the cloud allows you to move fast initially, it also allows complexity and cost to build up quickly. One resignation later and you're left with a difficult to understand, costly and insecure mess to deal with.
-      </br></br>
-      It's hard to find the time to simplify things, especially when specialist staff are in such high demand. We've seen environments where 50%+ of the cost is waste. Storage artifacts no one is going to use again, instances everyone has forgot about.
-      </br></br>
-      It's even harder to take advantage of all of the opportunity provided by AWS's constant service updates. Moving from gp2 to gp3 storage for example cuts cost by about 10% and actually increases performance. There are a tonne of changes like this that are easy to implement, but you have to know that they exist.
-      </p>
-      <!-- <a href="#" class="button">Learn More</a> -->
-    </div>
+  <div class="section">
+    <h2>Cloud without the complexity</h2>
+    <p>
+      Are you a software engineering leader who wants to lower your cloud costs, minimize security exposure, and ship faster?
+    </p>
+    <p>
+      Edulilo is an AWS consultancy specializing in dramatically simplifying existing workloads for software engineering teams.
+    </p>
+  </div>
 
-    <div class="card">
-      <h3>AWS/Azure Services</h3>
-      <ul>
-        <li>Hands-on cloud management</li>
-        <li>Cost Reduction</li>
-        <li>CI speed improvements</li>
-        <li>CI reliability improvements</li>
-      </ul>
+  <div class="section">
+    <h2>Services</h2>
+    <div class="services-grid">
+      <div class="service-box">
+        <h3>Cloud Management</h3>
+        <p>Hands-on, no-nonsense optimization of your AWS infrastructure.</p>
+      </div>
+      <div class="service-box">
+        <h3>Cost Reduction</h3>
+        <p>Eliminate waste and right-size your usage for immediate savings.</p>
+      </div>
+      <div class="service-box">
+        <h3>Security Hardening</h3>
+        <p>Reduce your attack surface and enforce least-privilege policies.</p>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <div class="section narrative">
+    <h2>What makes the cloud hard?</h2>
+    <p>
+      The cloud allows you to move fast in the beginning, but complexity and costs build up quickly. One resignation later and you're left with a difficult to understand, costly and insecure mess.
+    </p>
+    <p>
+      It's hard to find the time to simplify things when specialist staff are in such high demand. There are environment with storage artifacts no one uses, instances that no one uses.
+    </p>
+    <p>
+      Even though you aren't using them, they're still costing you money, and often they're also exposing you to security risks.
+    </p>
+  </div>
+
+  <div class="section cta">
+    <h2>Ready to get your cloud under control?</h2>
+    <p>Let Edulilo help you clean up, cut costs, and move faster.</p>
+    <a href="mailto:andrew@edulilo.com">Contact Us</a>
+  </div>
 
   <footer>
     &copy; <span id="year"></span> Edulilo. All rights reserved.
