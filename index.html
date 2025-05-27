@@ -21,17 +21,28 @@
       const authority = document.querySelector('input[name="authority"]:checked')?.value;
       const time = document.querySelector('input[name="time"]:checked')?.value;
 
-      const allYes = [budget, authority, time].every(ans => ans === "yes");
+      const allAnswered = [budget, authority, time].every(val => val !== undefined);
+      const allYes = [budget, authority, time].every(val => val === "yes");
 
       const calEl = document.getElementById("my-cal-inline");
+      const rejectionMessageEl = document.getElementById("rejection-message");
+      const successMessageEl = document.getElementById("success-message");
+
       if (allYes) {
         calEl.classList.add("visible");
+        rejectionMessageEl.style.display = "none";
+        successMessageEl.style.display = "block";
+      } else if (allAnswered) {
+        calEl.classList.remove("visible");
+        rejectionMessageEl.style.display = "block";
+        successMessageEl.style.display = "none";
       } else {
         calEl.classList.remove("visible");
+        rejectionMessageEl.style.display = "none";
+        successMessageEl.style.display = "none";
       }
     }
 
-    // Wrap this in DOMContentLoaded so it runs *after* HTML is ready
     document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.check-trigger').forEach(input => {
         input.addEventListener('change', checkAnswers);
@@ -69,7 +80,7 @@
     .section {
       max-width: 900px;
       margin: 0 auto;
-      padding: 1rem 1rem;
+      padding: 0rem 1rem;
     }
 
     .section h2 {
@@ -261,7 +272,7 @@
     <h2>Are we the right fit?</h2>
     <form>
       <div style="margin-bottom: 1.5rem;">
-        <p><strong>Do you have an AWS budget/spend that is greater than $20K/month?</strong></p>
+        <p><strong>Do you have an AWS budget/spend that is greater than $10,000/month?</strong></p>
           <label><input type="radio" name="budget" value="yes" class="check-trigger"> Yes</label>
           <label><input type="radio" name="budget" value="no" class="check-trigger"> No</label>
       </div>
@@ -279,8 +290,16 @@
       </div>
     </form>
   </div>
+  <div class="section" id="rejection-message" style="display:none;">
+  <p>
+    At the moment Edulilo is only working with organisations that are spending at least $10,000/month on AWS, and who have the authority and time to work through our process. Thank you for taking the time to visit our page, and if you have any further inquiries please email <a href="mailto:andrew@edulilo.com">andrew@edulilo.com</a>.
+  </p>
+  </div>
     <!-- Cal inline embed code begins -->
   <div class="section">
+  <div class="section" id="success-message" style="display:none;">
+  <p>Excellent, Edulilo can help you. Please book in a call.</p>
+  </div>
   <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
   <script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
