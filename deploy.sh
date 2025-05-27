@@ -9,4 +9,9 @@ aws s3 sync . s3://edulilo.com \
     --exclude ".git/*" \
     --exclude "deploy.sh"
 
-echo "✅ Blog successfully deployed to s3://edulilo.com"
+# Invalidate CloudFront cache
+aws cloudfront create-invalidation \
+    --distribution-id E3TJ3RWT5GKKGJ \
+    --paths "/*"
+
+echo "✅ Blog successfully deployed to s3://edulilo.com and CloudFront cache invalidated"
