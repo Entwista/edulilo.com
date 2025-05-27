@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edulilo - AWS Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <script>
     (function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
         w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
@@ -12,32 +14,56 @@
 
     mt('send', 'pageview');
   </script>
+  <script>
+    function checkAnswers() {
+      const budget = document.querySelector('input[name="budget"]:checked')?.value;
+      const authority = document.querySelector('input[name="authority"]:checked')?.value;
+      const time = document.querySelector('input[name="time"]:checked')?.value;
+
+      const allYes = [budget, authority, time].every(ans => ans === "yes");
+
+      const calEl = document.getElementById("my-cal-inline");
+      if (allYes) {
+        calEl.classList.add("visible");
+      } else {
+        calEl.classList.remove("visible");
+      }
+    }
+
+    // Wrap this in DOMContentLoaded so it runs *after* HTML is ready
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.check-trigger').forEach(input => {
+        input.addEventListener('change', checkAnswers);
+      });
+    });
+  </script>
+
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f7fafc;
-      color: #2d3748;
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: #F5F7FA;
+      color: #1C2D4A;
       line-height: 1.6;
     }
 
     header {
       text-align: center;
       padding: 4rem 1rem 2rem;
-      background: linear-gradient(to right, #ebf8ff, #ffffff);
+      background: linear-gradient(to right, #ffffff, #F5F7FA);
     }
 
     header h1 {
       font-size: 3rem;
       margin: 0;
-      color: #1a365d;
+      color: #1C2D4A;
     }
 
     header p {
-      font-size: 1.25rem;
-      color: #2c5282;
-      margin-top: 0.5rem;
+      color: #1C2D4A;
+      font-weight: 600;
     }
+
 
     .section {
       max-width: 900px;
@@ -47,7 +73,7 @@
 
     .section h2 {
       font-size: 2rem;
-      color: #2b6cb0;
+      color: #1C2D4A;
       margin-bottom: 1rem;
     }
 
@@ -63,6 +89,43 @@
       }
     }
 
+    .section-intro .intro-content {
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-intro .intro-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .intro-text {
+        flex: 2;
+      }
+
+      .intro-cta {
+        flex: 1;
+        text-align: right;
+      }
+    }
+
+    .button-primary {
+      background: #1C2D4A;
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .button-primary:hover {
+      background: #142136;
+    }
+
+
     .service-box {
       background: #ffffff;
       padding: 1rem;
@@ -73,7 +136,7 @@
 
     .service-box h3 {
       margin: 0.5rem 0;
-      color: #2c5282;
+      color: #1C2D4A;
     }
 
     .narrative p {
@@ -81,7 +144,7 @@
     }
 
     .cta {
-      background: #2b6cb0;
+      background: #1C2D4A;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
@@ -93,8 +156,8 @@
     }
 
     .cta a {
-      background: white;
-      color: #2b6cb0;
+      background: #F4B400;
+      color: #1C2D4A;
       text-decoration: none;
       padding: 0.75rem 1.5rem;
       border-radius: 0.375rem;
@@ -107,33 +170,60 @@
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #718096;
+      color: #6c7a89;
     }
+    .questions label {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+    .questions input[type="radio"] {
+      margin-right: 0.4rem;
+    }
+
+    #my-cal-inline {
+      display: none;
+    }
+    #my-cal-inline.visible {
+      display: block;
+    }
+
   </style>
 </head>
 <body>
 
   <header>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
+    <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-label="Edulilo Logo">
+      <rect x="0" y="0" width="30" height="8" fill="#1C2D4A"/>
+      <rect x="0" y="12" width="20" height="8" fill="#1C2D4A"/>
+      <rect x="0" y="24" width="30" height="8" fill="#F4B400"/>
+    </svg>
     <h1>Edulilo</h1>
+    </div>
     <p>Computing with no excuses</p>
   </header>
-
-  <div class="section">
-    <h2>Cloud without the complexity</h2>
-    <p>
-      Are you a software engineering leader who wants to lower your cloud costs, minimize security exposure, and ship faster?
-    </p>
-    <p>
-      Edulilo will dramatically simplifying your existing AWS workloads.
-    </p>
+  <div class="section intro-content">
+    <div class="intro-text">
+      <h2>Cloud without the complexity</h2>
+      <p>
+        Are you a software engineering leader who wants to lower your cloud costs, minimize security exposure, and ship faster?
+      </p>
+      <p>
+        Edulilo dramatically simplifies your existing workloads.
+      </p>
+    </div>
+    <div class="intro-cta">
+      <a href="#enquire" class="button-primary">Enquire now</a>
+    </div>
   </div>
 
   <div class="section">
     <h2>Services</h2>
     <div class="services-grid">
       <div class="service-box">
-        <h3>Cloud Management</h3>
-        <p>Hands-on, no-nonsense optimization of your AWS infrastructure.</p>
+        <h3>Workload Simplification</h3>
+        <p>Redesign infrastructure under your existing workloads for efficiency.</p>
       </div>
       <div class="service-box">
         <h3>Cost Reduction</h3>
@@ -162,11 +252,32 @@
     </p>
   </div>
 
-  <div class="section cta">
+  <div class="section cta" id="enquire">
     <h2>Ready to get your cloud under control?</h2>
-    <p>Let Edulilo help you clean up, cut costs, and move faster.</p>
+    <p>We'll send you scripts that will allow you to narrow down the biggest costs and security risks of your workloads in under 5 minutes. We'll go through the output with you on the call.</p>
   </div>
+    <div class="section questions">
+    <h2>Are we the right fit?</h2>
+    <form>
+      <div style="margin-bottom: 1.5rem;">
+        <p><strong>Do you have an AWS budget/spend that is greater than $20K/month?</strong></p>
+          <label><input type="radio" name="budget" value="yes" class="check-trigger"> Yes</label>
+          <label><input type="radio" name="budget" value="no" class="check-trigger"> No</label>
+      </div>
 
+      <div style="margin-bottom: 1.5rem;">
+        <p><strong>Do you have the authority to run read-only scripts against your environment to pull out cost and security information?</strong></p>
+          <label><input type="radio" name="authority" value="yes" class="check-trigger"> Yes</label>
+          <label><input type="radio" name="authority" value="no" class="check-trigger"> No</label>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <p><strong>Do you have 2 hours available in the next two weeks in order to complete this process end to end?</strong></p>
+        <label><input type="radio" name="time" value="yes" class="check-trigger"> Yes</label>
+        <label><input type="radio" name="time" value="no" class="check-trigger"> No</label>
+      </div>
+    </form>
+  </div>
     <!-- Cal inline embed code begins -->
   <div class="section">
   <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
