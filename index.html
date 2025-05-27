@@ -77,26 +77,18 @@
       gap: 1rem;
     }
 
-    @media (min-width: 600px) {
+    .intro-cta {
+      text-align: right;
+    }
+
+    @media (min-width: 900px) {
       .services-grid {
         grid-template-columns: repeat(3, 1fr);
       }
-    }
 
-    @media (min-width: 768px) {
-      .section-intro .intro-content {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
 
-      .intro-text {
-        flex: 2;
-      }
-
-      .intro-cta {
-        flex: 1;
-        text-align: right;
+      .cta {
+        border-radius: 0.5rem;
       }
     }
 
@@ -127,7 +119,6 @@
       color: #fff;
       text-align: center;
       padding: 2rem 1rem;
-      border-radius: 0.5rem;
     }
 
     footer {
