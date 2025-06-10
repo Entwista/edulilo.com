@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to cut your AWS bill</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+	<h1>How to cut your AWS bill</h1>
+  </header>
+  <div class="section">
+    <p>
+      There are two parts to this, both crucial. You need to become aware of what is going on in your account –
+      whether by clicking around the AWS Console, using the AWS CLI, or running a report generator like
+      <a href="https://edulilo.com/#enquire">the one we made</a>. You need to know things like:
+    </p>
+
+    <ul>
+      <li>What services are my costs coming from?</li>
+      <li>What usage types are my costs coming from?</li>
+      <li>What instances do I have running? Am I actually utilizing the resources?</li>
+    </ul>
+
+    <p>
+      Our <a href="https://edulilo.com/#enquire">Cloud Cost Mapping Script</a> does all of this for you. You
+      can also use AWS Cost Explorer, the EC2 console and the CloudWatch console, but it will take longer.
+    </p>
+
+    <p>
+      Once you know where your costs are coming from, run through our playbooks for each AWS service. Start
+      with the service you’re spending the most on, then move down to maximize savings.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>AWS Playbooks</h2>
+    <div class="services-grid">
+      <div class="service-box">
+        <h3>EC2 Playbook</h3>
+      </div>
+      <div class="service-box">
+        <h3>EBS Playbook</h3>
+      </div>
+      <div class="service-box">
+        <h3>S3 Playbook</h3>
+      </div>
+      <div class="service-box">
+        <h3>RDS Playbook</h3>
+      </div>
+      <div class="service-box">
+        <h3>VPC Playbook</h3>
+      </div>
+      <div class="service-box">
+        <h3>Lambda Playbook</h3>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; <span id="year"></span> Edulilo. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

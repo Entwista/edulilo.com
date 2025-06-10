@@ -97,3 +97,12 @@ footer {
 .questions input[type="radio"] {
   margin-right: 0.4rem;
 }
+
+.section ul {
+  list-style: disc inside;
+  margin-bottom: 1.5rem;
+}
+
+.section ul li {
+  margin-bottom: 0.5rem;
+}
