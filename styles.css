@@ -106,3 +106,67 @@ footer {
 .section ul li {
   margin-bottom: 0.5rem;
 }
+
+.step-list {
+  counter-reset: step;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step-list li {
+  counter-increment: step;
+  display: flex;
+  align-items: center;
+}
+
+.step-list li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  background: #1C2D4A;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  flex: 1;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+.callout {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-left: 4px solid #F4B400;
+  background: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.callout.warning {
+  border-color: #E53E3E;
+}
+
+.step-content .diagram {
+  display: block;
+  margin: 1.5rem auto;
+  width: 80%;  
+  max-width: 400px;
+  height: auto;
+}
+
+.step-content .diagram {
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
