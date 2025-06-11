@@ -38,19 +38,34 @@
       });
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('.nav-toggle')
+        .addEventListener('click', () =>
+          document.querySelector('.main-nav').classList.toggle('open')
+        );
+    });
+  </script>
 </head>
 <body>
-
   <header>
-    <div style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-    <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-label="Edulilo Logo">
-      <rect x="0" y="0" width="30" height="8" fill="#1C2D4A"/>
-      <rect x="0" y="12" width="20" height="8" fill="#1C2D4A"/>
-      <rect x="0" y="24" width="30" height="8" fill="#F4B400"/>
-    </svg>
-    <h1>Edulilo</h1>
+    <div class="logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-label="Edulilo Logo">
+        <rect x="0" y="0" width="30" height="8" fill="#1C2D4A"/>
+        <rect x="0" y="12" width="20" height="8" fill="#1C2D4A"/>
+        <rect x="0" y="24" width="30" height="8" fill="#F4B400"/>
+      </svg>
+      <h1>Edulilo</h1>
     </div>
-    <p>Computing with no excuses</p>
+
+    <nav class="main-nav">
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="general_playbook.html">DIY Cost Savings</a></li>
+        <li><a href="index.html#enquire" class="button-primary">Enquire</a></li>
+      </ul>
+    </nav>
   </header>
   <div class="section intro-content">
     <div class="intro-text">
@@ -152,7 +167,7 @@
     </script>
     <!-- Cal inline embed code ends -->
   </div>
-    <footer>
+  <footer>
     &copy; <span id="year"></span> Edulilo. All rights reserved.
   </footer>
 
