@@ -236,3 +236,13 @@ header {
     cursor: pointer;
   }
 }
+
+a.service-box {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.service-box:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
