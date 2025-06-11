@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S3 Cost Cutting Playbook</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('.nav-toggle')
+        .addEventListener('click', () =>
+          document.querySelector('.main-nav').classList.toggle('open')
+        );
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-label="Edulilo Logo">
+        <rect x="0" y="0" width="30" height="8" fill="#1C2D4A"/>
+        <rect x="0" y="12" width="20" height="8" fill="#1C2D4A"/>
+        <rect x="0" y="24" width="30" height="8" fill="#F4B400"/>
+      </svg>
+      <h1>Edulilo</h1>
+    </div>
+    <nav class="main-nav">
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="general_playbook.html">DIY Cost Savings</a></li>
+        <li><a href="index.html#enquire" class="button-primary">Enquire</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h1>S3 Cost Cutting Playbook</h1>
+    <ol class="step-list">
+      <li>
+        <div class="step-content">
+          <h3>Enable <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/intelligent-tiering-overview.html">S3 Intelligent Tiering</a></h3>
+          <p>
+            This lets you keep the same data but pay less over time as objects age and are accessed less. It's really simple to set up and the savings can be a massive proportion of your bill. If you run our <a href="https://edulilo.com/#enquire">reporting script</a>, it will show you whether you have a lot of objects that should probably be moved to a cheaper storage tier.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <h3>Use CloudFront for heavy data‑out traffic</h3>
+          <p>
+            If you're spending a lot on data transfer out through a web application, front your content with Amazon CloudFront. Caching at the edge can drastically reduce S3 egress costs and improve performance.
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <h3>Retain most data until Glacier costs dominate</h3>
+          <p>
+            You can think about deleting data, but until Glacier and Deep Archive make up a significant part of your storage cost, it's usually better to keep most of it around. This avoids data-loss risk while still capturing the bulk of cost savings.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
