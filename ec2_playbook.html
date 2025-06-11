@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EC2 Cost Cutting Playbook</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelector('.nav-toggle')
+        .addEventListener('click', () =>
+          document.querySelector('.main-nav').classList.toggle('open')
+        );
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" aria-label="Edulilo Logo">
+        <rect x="0" y="0" width="30" height="8" fill="#1C2D4A"/>
+        <rect x="0" y="12" width="20" height="8" fill="#1C2D4A"/>
+        <rect x="0" y="24" width="30" height="8" fill="#F4B400"/>
+      </svg>
+      <h1>Edulilo</h1>
+    </div>
+    <nav class="main-nav">
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="general_playbook.html">DIY Cost Savings</a></li>
+        <li><a href="index.html#enquire" class="button-primary">Enquire</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h1>EC2 Cost Cutting Playbook</h1>
+    <ol class="step-list">
+      <li>
+        <div class="step-content">
+          <h3>Review CloudWatch CPU metrics</h3>
+		  <p>Check <strong>Maximum CPU Utilization over the last month</strong> (excluding startup spikes). If it’s below 50%, you can downsize while retaining the same RAM. For example: <code>c6.2xlarge → m6.xlarge → r6.large</code> (same RAM/CPU type; r6.large has ¼ the vCPUs of c6.2xlarge).</p>
+		</div>
+      </li>
+      <li>
+        <div class="step-content">
+          <h3>Track RAM usage</h3>
+          <p>RAM isn’t monitored by default in CloudWatch. Install the CloudWatch Agent to capture RAM utilization. If average RAM usage is below 50%, downsize from higher‑RAM to lower‑RAM types i.e <code>r6.large → m6.large</code> or <code>m6.large -> c6.large</code>. 
+          <p>Alternatively, spin up a test workload on a smaller‑RAM instance: if it runs fine, you’ve unlocked ~11% savings.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <h3>Validate bursting credit costs</h3>
+          <p>If you run T3 instances in “unlimited” mode, it costs ~$0.05/CPU‑hour extra for any usage above the allowed baseline. On <code>t</code> instances above <code>t3.medium</code> at >40% utilization, you should switch to the equivalent <code>m</code> series instance.
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <h3>Audit and reclaim idle instances</h3>
+          <p>Order your instances by launch time (oldest first). Identify the owner and purpose, then message them:<br><em>“Hey, I understand you’re using EC2 instance (Name/ID X, IP Y, Key Pair Z). Are you still using it?”</em> If abandoned, terminate it. If they might reuse it, propose stopping it now and restarting later. Nothing’s cheaper than a terminated instance.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-content">
+          <h3>Purchase Savings Plans</h3>
+          <p>After doing the above, commit to an EC2 Savings Plan for your baseline usage. It delivers the highest ROI for minimal effort—often saving thousands per month with a single click.</p>
+
+          <p>It's <strong>really</strong> important that you complete the above steps before you purchase savings plans. If you commit to spending that money with AWS you're going to have to pay up, even if you realise you didn't need that much compute anyways.
+        </div>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
