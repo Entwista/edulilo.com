@@ -101,18 +101,62 @@
   </div>
 
   <div class="section">
-    <h2>What makes the cloud hard?</h2>
+    <h2>Does the Cloud Need to Be So Hard?</h2>
+
     <p>
-      The cloud allows you to move fast in the beginning, but complexity and costs build up quickly. One resignation later and you're left with a difficult to understand, costly and insecure mess.
+      The cloud lets you deploy quickly, but complexity and costs build up fast. If you don't get control of your AWS account the problems are only going to get worse.r</p>
+
+    <h3>The Fear of the Terminate Button</h3>
+      <p>
+      With a single click you can launch a large server — and then leave it idle forever. Understanding the connections between resources is hard, so cleanup becomes risky and daunting. It’s easier to create a new resource than to remove an old one, so complexity and cost accumulate.
     </p>
     <p>
-      It's hard to find the time to simplify things when specialist staff are in such high demand. 
+      Teams are often reluctant to remove anything for fear of breaking production. For example, decommissioning an EC2 instance requires time and careful, or else you risk downtime. Each unused instance incurs ongoing charges, $0.20 per hour doesn't sound like a lot but over a year it's $1752. You wouldn't let your employees by something that expensive without asking you, but with cloud costs this happens daily.
+    </p>
+
+    <h3>Finding Hidden Savings</h3>
+    <p>
+      Many companies discover thousands of dollars in unclaimed cloud budget by finding low-hanging fruit such as:
+    </p>
+    <ul>
+      <li>Moving to newer instance and storage types (gp3 is 20% cheaper than gp2 with higher performance)</li>
+      <li>Tiering storage appropriately (S3 Glacier can be up to 95% cheaper than S3 Standard).</li>
+      <li>Rightsizing instances (reducing vCPUs can often cut costs by around 35% without impacting performance - as many application are memory constrained).</li>
+      <li>Discovering completely unused resources (100% cost saving, and added security benefits)</li>
+    </ul>
+
+    <h3>Why not just AWS's tools?</h3>
+    <ul>
+      <li>
+        <strong>Tooling limitations:</strong> AWS provides useful tools like Cost Explorer and Trusted Advisor checks, but they don't have the context to understand what is going on across your account.
+      </li>
+      <li>
+        <strong>Business information:</strong> AWS can’t infer the value of each workload without reviewing documentation and talking to your team—work I excel at.
+      </li>
+      <li>
+        <strong>Alignment issues:</strong> AWS wants to appear like they want to help you save money, so you choose them over their competitors when you pick a provider. However, every dollar you spend on the cloud is revenue for them, so they're really well incentivised to appear like they are helping, while you pay them way more than you need to.
+      </li>
+    </ul>
+
+    <h3>Consequences of Inaction</h3>
+    <ul>
+      <li>
+        <strong>Budget constraints:</strong> When your cloud budget is maxed out, you lose the agility and speed that made you choose the cloud in the first place. You're stuck explaining yourself to finance instead of building new workloads.
+      </li>
+      <li>
+        <strong>Further loss of control:</strong> Until you have clarity on the state of your account,  resources are going to continue to build up. The mess will get harder and harder to sort out because that are more pieces mixed together. 
+      </li>
+      <li>
+        <strong>Lost trust:</strong> Overspending on this budget undermines future budget requests for software, hardware, conferences, and training.
+      </li>
+    </ul>
+
+    <h3>Why Work with Me?</h3>
+    <p>
+      I specialize in identifying cost and complexity hotspots and guiding teams through safe, effective cleanup. I've built tools that bring together information from across your cloud environment and use it together to identify simple changes you can make to save money. I've saved tens of thousands of dollars in cloud expenses without compromising workloads. I've ran cloud operations for a company making over $100,000,000 in revenue. I left to start this company because I wanted to keep cutting costs and my employer was running out of costs to cut!
     </p>
     <p>
-      Many environments have storage artifacts and instances no one knows about.
-    </p>
-    <p>
-      Even though you aren't using them, they're still costing you money, and often they're also exposing you to security risks.
+      Hiring serious cloud professionals in todays market are going to cost you hundreds of thousands annually. I'll do an initial assessment of your workloads for free,  and I guarantee that my hands on work to optimize them will cost less than 30% of the amount saved.
     </p>
   </div>
 
